@@ -1,0 +1,22 @@
+@keyframes fadeAwayAnimation {
+  0%{
+    opacity: 100%;
+  }
+  100%{
+    opacity: 0%;
+  }
+}
+
+.container{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  pointer-events: none;
+  animation-name: fadeAwayAnimation;
+  animation-delay: 1.5s;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}

@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  padding-top: 60px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1200px) {
+    width: 80vw;
+  }
+
+  .quote {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 14px;
+    font-style: italic;
+    color: gray;
+  }
+
+  .links {
+    padding-top: 20px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+  }
+}

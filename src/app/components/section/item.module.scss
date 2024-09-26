@@ -1,0 +1,23 @@
+.container {
+  background: rgb(49, 48, 56);
+  border-radius: 6px;
+  flex: 1 0 32%;
+  max-width: 33%;
+  padding: 6px;
+
+  .image {
+    width: 100%;
+    aspect-ratio: 1;
+  }
+
+  .title {
+    font-size: 20px;
+    color: inherit;
+    text-align: center;
+    padding-top: 4px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}
