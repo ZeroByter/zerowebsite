@@ -1,17 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import "./index.scss";
 import reportWebVitals from "./reportWebVitals";
 import Home from "./app/page";
+import GalacticLanderPage from "./galacticlander";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-root.render(
-  <React.StrictMode>
-    <Home />
-  </React.StrictMode>
-);
+
+const getRenderPage = () => {
+  if (
+    window.location.host.startsWith("galacticlander") ||
+    window.location.pathname.startsWith("/galacticlander")
+  ) {
+    return <GalacticLanderPage />;
+  }
+
+  document.body.setAttribute("mainPage", "true");
+
+  return <Home />;
+};
+
+root.render(<React.StrictMode>{getRenderPage()}</React.StrictMode>);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

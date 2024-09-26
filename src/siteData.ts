@@ -20,7 +20,10 @@ const siteData: SiteDataType = {
         {
           title: "Galactic Lander",
           image: "https://placehold.co/69",
-          mainLink: "https://galacticlander.zerobyter.net/",
+          mainLink:
+            process.env.NODE_ENV === "development"
+              ? "/galacticlander"
+              : "https://galacticlander.zerobyter.net/",
         },
       ],
     },
