@@ -1,6 +1,8 @@
 import { FC } from "react";
 import css from "./index.module.scss";
 import ButtonLink from "../app/components/shared/buttonLink";
+import AboutContent from "./about";
+import WorkshopContent from "./workshop";
 
 const getNavigationLink = (link: string) => {
   if (process.env.NODE_ENV === "development") {
@@ -17,10 +19,10 @@ const GalacticLanderPage: FC = () => {
         .replace("/galacticlander", "")
         .startsWith("/workshop")
     ) {
-      return "workshop";
+      return <WorkshopContent />;
     }
 
-    return "index";
+    return <AboutContent />;
   };
 
   return (
@@ -59,7 +61,7 @@ const GalacticLanderPage: FC = () => {
             Workshop Submission Guide
           </ButtonLink>
         </div>
-        <div>{getRenderContents()}</div>
+        <div className={css.contents}>{getRenderContents()}</div>
       </div>
     </div>
   );
