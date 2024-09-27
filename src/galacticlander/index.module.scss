@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .background {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("/imgs/galacticlander/backgroundImage.png");
+    pointer-events: none;
+    z-index: -100;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+  }
+
+  .mainGameLogo {
+    background: url("/imgs/galacticlander/mainGameLogo.png") 50%;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 70px;
+    background-repeat: no-repeat;
+  }
+
+  .aboveGroundLight {
+    background-image: url("/imgs/galacticlander/aboveGroundLightGradient.png");
+    width: 100%;
+    height: 250px;
+  }
+
+  .groundTop {
+    background-image: url("/imgs/galacticlander/groundTop.png");
+    width: 100%;
+    height: 100px;
+    z-index: 1;
+    position: absolute;
+    top: 150px;
+  }
+
+  .gameInfo {
+    background-color: #2D2D2D;
+    width: 100%;
+    color: #e8e8e8;
+    padding-top: 25px;
+    flex: 1;
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      padding-top: 30px;
+    }
+  }
+}

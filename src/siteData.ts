@@ -22,7 +22,7 @@ const siteData: SiteDataType = {
           image: "https://placehold.co/69",
           mainLink:
             process.env.NODE_ENV === "development"
-              ? "/galacticlander"
+              ? "/galacticlander/"
               : "https://galacticlander.zerobyter.net/",
         },
       ],

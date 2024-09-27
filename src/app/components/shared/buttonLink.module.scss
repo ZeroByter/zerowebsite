@@ -1,0 +1,21 @@
+.link {
+  .button {
+    cursor: pointer;
+    color: #007bff;
+    background: none;
+    border: 1px solid #007bff;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: inherit;
+    transition: background 0.25s, color 0.25s;
+
+    &:hover {
+      background: #007bff;
+      color: white;
+    }
+
+    &:focus {
+      outline: 4px solid #007bff5d;
+    }
+  }
+}
