@@ -7,17 +7,6 @@ import pixelPaintersIndexLogo from "./imgs/pixelpainters/indexLogo.png";
 const siteData: SiteDataType = {
   sections: [
     {
-      title: "Website Projects",
-      skills: ["NodeJS", "TypeScript", "React", "SASS"],
-      projects: [
-        {
-          title: "Paint Online",
-          image: paintOnlineIndexLogo,
-          mainLink: "https://zerobyter.github.io/paint/",
-        },
-      ],
-    },
-    {
       title: "Video Game Projects",
       skills: ["Unity", "C#"],
       projects: [
@@ -38,6 +27,17 @@ const siteData: SiteDataType = {
           title: "Pixel Painters",
           image: pixelPaintersIndexLogo,
           mainLink: "https://zerobyter.itch.io/pixelpainters",
+        },
+      ],
+    },
+    {
+      title: "Website Projects",
+      skills: ["NodeJS", "TypeScript", "React", "SASS"],
+      projects: [
+        {
+          title: "Paint Online",
+          image: paintOnlineIndexLogo,
+          mainLink: "https://zerobyter.github.io/paint/",
         },
       ],
     },

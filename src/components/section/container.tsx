@@ -1,7 +1,7 @@
 import { FC } from "react";
 import css from "./container.module.scss";
 import Item from "./item";
-import SectionType from "../../../types/section";
+import SectionType from "../../types/section";
 
 type Props = {
   section: SectionType;

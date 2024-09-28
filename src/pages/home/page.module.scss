@@ -24,4 +24,24 @@
     justify-content: center;
     gap: 18px;
   }
+
+  .skills {
+    margin: 0 auto;
+    padding-top: 30px;
+    font-size: 15px;
+
+    .header {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    ul {
+      margin: 0px;
+      padding-left: 20px;
+
+      ul {
+        padding-left: 20px;
+      }
+    }
+  }
 }

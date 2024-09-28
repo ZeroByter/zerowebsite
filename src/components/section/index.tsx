@@ -1,7 +1,7 @@
 import { FC } from "react";
 import SectionContainer from "./container";
 import css from "./index.module.scss";
-import siteData from "../../../siteData";
+import siteData from "../../siteData";
 
 const Sections: FC = () => {
   const renderSections = siteData.sections.map((section) => {

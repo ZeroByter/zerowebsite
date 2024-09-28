@@ -1,8 +1,8 @@
 import { FC } from "react";
 import css from "./index.module.scss";
-import ButtonLink from "../../app/components/shared/buttonLink";
 import AboutContent from "./about";
 import WorkshopContent from "./workshop";
+import ButtonLink from "../../components/shared/buttonLink";
 
 const getNavigationLink = (link: string) => {
   if (process.env.NODE_ENV === "development") {

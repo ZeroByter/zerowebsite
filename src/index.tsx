@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.scss";
 import reportWebVitals from "./reportWebVitals";
-import Home from "./app/page";
 import GalacticLanderPage from "./pages/galacticlander";
+import Home from "./pages/home/page";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
