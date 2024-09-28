@@ -1,6 +1,6 @@
 import { FC } from "react";
 import css from "./workshop.module.scss";
-import missileLauncherCircles from "../imgs/galacticlander/missileLauncherCircles.png";
+import missileLauncherCircles from "../../imgs/galacticlander/missileLauncherCircles.png";
 
 const WorkshopContent: FC = () => {
   if (

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import css from "./index.module.scss";
-import ButtonLink from "../app/components/shared/buttonLink";
+import ButtonLink from "../../app/components/shared/buttonLink";
 import AboutContent from "./about";
 import WorkshopContent from "./workshop";
 

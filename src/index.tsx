@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.scss";
 import reportWebVitals from "./reportWebVitals";
 import Home from "./app/page";
-import GalacticLanderPage from "./galacticlander";
+import GalacticLanderPage from "./pages/galacticlander";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -16,8 +16,6 @@ const getRenderPage = () => {
   ) {
     return <GalacticLanderPage />;
   }
-
-  document.body.setAttribute("mainPage", "true");
 
   return <Home />;
 };
