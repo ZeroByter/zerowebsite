@@ -1,0 +1,16 @@
+javascript and typescript will be in polar orbits opposite from each other
+around them, nodejs and react will be in a ring outside of them
+around react, redux and graphql will orbit
+around them, three.js will orbit
+
+in polar orbit of those webby things, c# will orbit and around C#, unity will orbit
+
+NodeJS [icon]
+javascript [icon]
+typescript [icon]
+react [icon]
+Redux [icon]
+graphql [icon]
+c# [icon]
+unity [icon]
+three.js [icon]

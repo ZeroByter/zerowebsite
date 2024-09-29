@@ -1,5 +1,6 @@
 .container {
   background: rgb(49, 48, 56);
+  color: white;
   border-radius: 6px;
   flex: 1 0 31.5%;
   max-width: 33%;
@@ -11,7 +12,16 @@
   }
 
   &:hover {
-    color: #68b1ff;
+    color: #a9d3ff;
+  }
+
+  @media screen and (max-width: 1200px) {
+    flex: 1 0 100%;
+    max-width: unset;
+
+    &:hover {
+      box-shadow: unset;
+    }
   }
 
   .image {
@@ -20,7 +30,7 @@
   }
 
   .title {
-    font-size: min(20px, 3.5vmin);
+    font-size: min(18px, 4.5vmin);
     color: inherit;
     text-align: center;
     padding-top: 4px;

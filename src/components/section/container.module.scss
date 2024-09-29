@@ -3,12 +3,12 @@
     text-align: center;
 
     .title {
-      font-size: min(22px, 3.5vmin);
+      font-size: min(23px, 4.5vmin);
       font-weight: bold;
     }
 
-    .skills{
-      font-size: min(14px, 3.1vmin);
+    .skills {
+      font-size: min(15px, 4vmin);
     }
   }
 
@@ -17,5 +17,9 @@
     flex-wrap: wrap;
     gap: 6px;
     padding: 6px;
+
+    @media screen and (max-width: 1200px) {
+      gap: 10px;
+    }
   }
 }

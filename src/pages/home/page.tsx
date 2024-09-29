@@ -27,6 +27,7 @@ export default function Home() {
         </div>
         <div className={css.links}>
           <center>Contacts</center>
+          <ButtonLink href="mailto:zerobyter@zerobyter.net">Email</ButtonLink>
           <ButtonLink blankTarget={true} href="https://github.com/ZeroByter">
             GitHub
           </ButtonLink>
