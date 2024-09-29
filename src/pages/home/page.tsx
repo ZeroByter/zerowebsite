@@ -26,6 +26,7 @@ export default function Home() {
           </ul>
         </div>
         <div className={css.links}>
+          <center>Contacts</center>
           <ButtonLink blankTarget={true} href="https://github.com/ZeroByter">
             GitHub
           </ButtonLink>

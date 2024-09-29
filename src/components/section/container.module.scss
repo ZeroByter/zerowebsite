@@ -3,12 +3,12 @@
     text-align: center;
 
     .title {
-      font-size: 22px;
+      font-size: min(22px, 3.5vmin);
       font-weight: bold;
     }
 
     .skills{
-      font-size: 14px;
+      font-size: min(14px, 3.1vmin);
     }
   }
 

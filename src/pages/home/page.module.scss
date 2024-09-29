@@ -24,7 +24,7 @@
     padding-top: 20px;
 
     .links {
-      font-size: 16px;
+      font-size: min(15px, 3vmin);
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -45,13 +45,13 @@
     }
 
     .skills {
-      font-size: 15px;
+      font-size: min(15px, 3vmin);
       background: rgb(49, 48, 56);
       border-radius: 6px;
       padding: 6px;
 
       .header {
-        font-size: 16px;
+        font-size: min(16px, 3vmin);
         font-weight: bold;
       }
 
