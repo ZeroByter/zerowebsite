@@ -1,8 +1,8 @@
 const canvas = document.querySelector("canvas")
 const ctx = canvas.getContext("2d")
 
-canvas.width = 600
-canvas.height = 600
+canvas.width = 700
+canvas.height = 700
 
 const iconSize = 40;
 
@@ -22,7 +22,7 @@ const createAndLoadImage = (url) => {
 }
 
 const orbitData = {
-  orbitSize: 120,
+  orbitSize: 140,
   timeModifier: 1,
   items: [
     {
@@ -67,7 +67,7 @@ const orbitData = {
         ],
         outerOrbits: [
           {
-            orbitSize: 120,
+            orbitSize: 135,
             timeModifier: -1.5,
             items: [
               {
@@ -78,7 +78,7 @@ const orbitData = {
                 text: "react",
                 image: createAndLoadImage("/src/imgs/orbitIcons/react.webp"),
                 orbit: {
-                  orbitSize: 40,
+                  orbitSize: 50,
                   timeModifier: -1,
                   items: [
                     {
@@ -158,7 +158,7 @@ const renderOrbit = (ctx, time, centerX, centerY, orbitData) => {
 }
 
 const render = (time) => {
-  const slowTime = time / 2000
+  const slowTime = time / 7000
 
   ctx.clearRect(0, 0, canvas.width, canvas.height)
 
