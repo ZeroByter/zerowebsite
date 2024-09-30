@@ -1,3 +1,13 @@
+@keyframes orbitRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -40,27 +50,6 @@
 
         button {
           flex: 1;
-        }
-      }
-    }
-
-    .skills {
-      font-size: min(15px, 3vmin);
-      background: rgb(49, 48, 56);
-      border-radius: 6px;
-      padding: 6px;
-
-      .header {
-        font-size: min(16px, 3vmin);
-        font-weight: bold;
-      }
-
-      ul {
-        margin: 0px;
-        padding-left: 20px;
-
-        ul {
-          padding-left: 20px;
         }
       }
     }

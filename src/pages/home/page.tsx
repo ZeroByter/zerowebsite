@@ -9,23 +9,8 @@ export default function Home() {
       <MainLogo />
       <div className={css.quote}>{'"I love making things"'}</div>
       <div className={css.headerInfo}>
-        <div className={css.skills}>
-          <div className={css.header}>Skills:</div>
-          <ul>
-            <li>Web Development:</li>
-            <ul>
-              <li>60% Frontend - 40% Backend</li>
-            </ul>
-            <li>NodeJS + TypeScript</li>
-            <li>React</li>
-            <ul>
-              <li>Redux</li>
-              <li>GraphQL</li>
-            </ul>
-            <li>C#</li>
-          </ul>
-        </div>
-        <div className={css.links}>
+        
+        {/* <div className={css.links}>
           <center>Contacts</center>
           <ButtonLink href="mailto:zerobyter@zerobyter.net">Email</ButtonLink>
           <ButtonLink blankTarget={true} href="https://github.com/ZeroByter">
@@ -37,7 +22,7 @@ export default function Home() {
           >
             Steam
           </ButtonLink>
-        </div>
+        </div> */}
       </div>
       <Sections />
     </div>
