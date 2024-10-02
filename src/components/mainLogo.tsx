@@ -48,7 +48,6 @@ export const lerp = (a: number, b: number, t: number) => {
 
 const MainLogo: FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-
   const requestFrameRef = useRef<number>(0);
 
   useEffect(() => {

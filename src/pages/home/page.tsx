@@ -1,6 +1,6 @@
 import MainLogo from "../../components/mainLogo";
 import Sections from "../../components/section";
-import ButtonLink from "../../components/shared/buttonLink";
+import SkillsOrbit from "../../components/skillsOrbits";
 import css from "./page.module.scss";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
       <MainLogo />
       <div className={css.quote}>{'"I love making things"'}</div>
       <div className={css.headerInfo}>
-        
+        <SkillsOrbit />
         {/* <div className={css.links}>
           <center>Contacts</center>
           <ButtonLink href="mailto:zerobyter@zerobyter.net">Email</ButtonLink>
