@@ -20,8 +20,8 @@ export const intToVector = int => {
 }
 
 export const clamp = (min, max, value) => {
-    if(value < min) return min
-    if(value > max) return max
+    if (value < min) return min
+    if (value > max) return max
     return value
 }
 
@@ -30,7 +30,7 @@ export const clamp01 = value => {
 }
 
 export const lerp = (a, b, t) => {
-    return a + (b - a) * t
+    return a + (b - a) * clamp01(t)
 }
 
 export const ilerp = (a, b, t) => {
