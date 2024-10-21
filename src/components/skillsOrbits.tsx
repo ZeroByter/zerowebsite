@@ -13,21 +13,12 @@ import redux from "../imgs/orbitIcons/redux.webp";
 import graphql from "../imgs/orbitIcons/graphql.webp";
 import threejs from "../imgs/orbitIcons/threejs.webp";
 
-const iconSize = 40;
+const iconSize = 45;
 
-const getOrbitPosition = (
-  index: number,
-  count: number,
-  time: number,
-  size: number,
-  centerX: number,
-  centerY: number
-) => {
-  return [
-    Math.sin(time + (index / count) * Math.PI * 2) * size + centerX,
-    Math.cos(time + (index / count) * Math.PI * 2) * size + centerY,
-  ];
-};
+const tailPartsCount = 30;
+const tailPartLength = 100;
+const tailStartWidth = 10;
+const tailEndWidth = 0;
 
 const createAndLoadImage = (url: string) => {
   const image = new Image();
@@ -37,159 +28,74 @@ const createAndLoadImage = (url: string) => {
   return image;
 };
 
-type Orbit = {
-  orbitSize: number;
-  timeModifier: number;
-  items: OrbitItem[];
-  outerOrbits?: Orbit[];
+const clamp = (min: number, max: number, value: number) => {
+  if (value < min) return min;
+  if (value > max) return max;
+  return value;
 };
 
-type OrbitItem = {
-  text: string;
-  image: HTMLImageElement | null;
-  orbit?: Orbit;
+const clamp01 = (value: number) => {
+  return clamp(0, 1, value);
 };
 
-const orbitData: Orbit = {
-  orbitSize: 140,
-  timeModifier: 1,
-  items: [
+const lerp = (a: number, b: number, t: number) => {
+  return a + (b - a) * clamp01(t);
+};
+
+const orbits = [
+  [
     {
-      text: "",
-      image: null,
-      orbit: {
-        orbitSize: 0,
-        timeModifier: 0,
-        items: [
-          {
-            text: "c#",
-            image: createAndLoadImage(csharp),
-            orbit: {
-              orbitSize: 50,
-              timeModifier: -1,
-              items: [
-                {
-                  text: "unity",
-                  image: createAndLoadImage(unity),
-                },
-              ],
-            },
-          },
-        ],
-      },
+      text: "csharp",
+      image: createAndLoadImage(csharp),
     },
     {
-      text: "",
-      image: null,
-      orbit: {
-        orbitSize: 35,
-        timeModifier: 2,
-        items: [
-          {
-            text: "js",
-            image: createAndLoadImage(javascript),
-          },
-          {
-            text: "ts",
-            image: createAndLoadImage(typescript),
-          },
-        ],
-        outerOrbits: [
-          {
-            orbitSize: 135,
-            timeModifier: -1.5,
-            items: [
-              {
-                text: "react",
-                image: createAndLoadImage(react),
-                orbit: {
-                  orbitSize: 50,
-                  timeModifier: -1,
-                  items: [
-                    {
-                      text: "redux",
-                      image: createAndLoadImage(redux),
-                    },
-                    {
-                      text: "graphql",
-                      image: createAndLoadImage(graphql),
-                    },
-                    {
-                      text: "threejs",
-                      image: createAndLoadImage(threejs),
-                    },
-                  ],
-                },
-              },
-              {
-                text: "nodejs",
-                image: createAndLoadImage(nodejs),
-              },
-            ],
-          },
-        ],
-      },
+      text: "unity",
+      image: createAndLoadImage(unity),
+    },
+    {
+      text: "javascript",
+      image: createAndLoadImage(javascript),
+    },
+    {
+      text: "typescript",
+      image: createAndLoadImage(typescript),
+    },
+    {
+      text: "nodejs",
+      image: createAndLoadImage(nodejs),
+    },
+    {
+      text: "react",
+      image: createAndLoadImage(react),
+    },
+    {
+      text: "redux",
+      image: createAndLoadImage(redux),
+    },
+    {
+      text: "graphql",
+      image: createAndLoadImage(graphql),
+    },
+    {
+      text: "threejs",
+      image: createAndLoadImage(threejs),
     },
   ],
-};
+];
 
-const renderOrbit = (
-  ctx: CanvasRenderingContext2D,
+const getOrbitPosition = (
+  index: number,
+  count: number,
   time: number,
+  sizeX: number,
+  sizeY: number,
   centerX: number,
-  centerY: number,
-  orbitData: Orbit
+  centerY: number
 ) => {
-  ctx.strokeStyle = "rgba(255,255,255,0.25)";
-  ctx.beginPath();
-  ctx.arc(centerX, centerY, orbitData.orbitSize, 0, Math.PI * 2);
-  ctx.stroke();
-
-  if (orbitData.outerOrbits) {
-    for (const orbit of orbitData.outerOrbits) {
-      renderOrbit(ctx, time, centerX, centerY, orbit);
-    }
-  }
-
-  for (let i = 0; i < orbitData.items.length; i++) {
-    const item = orbitData.items[i];
-
-    const [renderX, renderY] = getOrbitPosition(
-      i,
-      orbitData.items.length,
-      time * orbitData.timeModifier,
-      orbitData.orbitSize,
-      centerX,
-      centerY
-    );
-
-    if (item.orbit) {
-      renderOrbit(ctx, time, renderX, renderY, item.orbit);
-    }
-
-    if (item.image && item.image.complete) {
-      // ctx.strokeStyle = "blue"
-      // ctx.beginPath()
-      // ctx.moveTo(renderX, renderY)
-      // ctx.lineTo(centerX, centerY)
-      // ctx.stroke()
-      ctx.drawImage(
-        item.image,
-        0,
-        0,
-        item.image.width,
-        item.image.height,
-        renderX - iconSize / 2,
-        renderY - iconSize / 2,
-        iconSize,
-        iconSize
-      );
-      // ctx.fillStyle = `red`
-      // ctx.fillRect(renderX - iconSize / 2, renderY - iconSize / 2, iconSize, iconSize)
-      // ctx.fillStyle = "white"
-      // ctx.fillText(item.text, renderX, renderY)
-    }
-  }
+  return [
+    Math.sin(time + (index / count) * Math.PI * 2) * sizeX + centerX,
+    Math.cos(time + (index / count) * Math.PI * 2) * sizeY + centerY,
+  ];
 };
 
 const SkillsOrbit: FC = () => {
@@ -211,21 +117,92 @@ const SkillsOrbit: FC = () => {
       return;
     }
 
-    canvas.width = 700;
-    canvas.height = 600;
+    canvas.width = 500;
+    canvas.height = 150;
 
     const render = (time: number) => {
+      const orbitWidth = canvas.width / 2 - iconSize;
+
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
+
       const slowTime = time / 7000;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      renderOrbit(
-        ctx,
-        slowTime,
-        canvas.width / 2,
-        canvas.height / 2,
-        orbitData
-      );
+      // ctx.fillStyle = "rgba(0,255,0,0.25)"
+      // ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+      for (let i = 0; i < orbits.length; i++) {
+        const orbit = orbits[i];
+
+        ctx.strokeStyle = "rgba(255,255,255,0.25)";
+        ctx.save();
+        ctx.translate(centerX, centerY);
+        ctx.scale(1, 0.25);
+        ctx.beginPath();
+        ctx.arc(0, 0, orbitWidth, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.restore();
+
+        for (let k = 0; k < orbit.length; k++) {
+          const item = orbit[k];
+
+          for (let z = 0; z < tailPartsCount; z++) {
+            const [renderX, renderY] = getOrbitPosition(
+              k,
+              orbit.length,
+              slowTime - z / tailPartLength,
+              orbitWidth,
+              orbitWidth / 4,
+              centerX,
+              centerY
+            );
+            const [nextRenderX, nextRenderY] = getOrbitPosition(
+              k,
+              orbit.length,
+              slowTime - (z + 1) / tailPartLength,
+              orbitWidth,
+              orbitWidth / 4,
+              centerX,
+              centerY
+            );
+
+            ctx.strokeStyle = "rgba(255,255,255,0.1)";
+            ctx.beginPath();
+            ctx.moveTo(renderX, renderY);
+            ctx.lineTo(nextRenderX, nextRenderY);
+            ctx.lineWidth = lerp(
+              tailStartWidth,
+              tailEndWidth,
+              z / tailPartsCount
+            );
+            ctx.stroke();
+          }
+
+          const [renderX, renderY] = getOrbitPosition(
+            k,
+            orbit.length,
+            slowTime,
+            orbitWidth,
+            orbitWidth / 4,
+            centerX,
+            centerY
+          );
+
+          ctx.drawImage(
+            item.image,
+            0,
+            0,
+            item.image.width,
+            item.image.height,
+            renderX - iconSize / 2,
+            renderY - iconSize / 2,
+            iconSize,
+            iconSize
+          );
+        }
+      }
 
       requestFrameRef.current = window.requestAnimationFrame(render);
     };

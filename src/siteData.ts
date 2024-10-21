@@ -1,4 +1,5 @@
 import SiteDataType from "./types/siteData";
+import aDoListIndexLogo from "./imgs/adolist/indexLogo.png";
 import paintOnlineIndexLogo from "./imgs/paintonline/indexLogo.png";
 import galacticLanderIndexLogo from "./imgs/galacticlander/indexLogo.png";
 import tenDaysToWarIndexLogo from "./imgs/tendaystowar/indexLogo.png";
@@ -33,6 +34,22 @@ const siteData: SiteDataType = {
       ],
     },
     {
+      title: "Website Projects",
+      skills: ["NodeJS", "TypeScript", "React", "SASS"],
+      projects: [
+        {
+          title: "ADoList",
+          image: aDoListIndexLogo,
+          mainLink: "https://zerobyter.github.io/adolist/",
+        },
+        {
+          title: "Paint Online",
+          image: paintOnlineIndexLogo,
+          mainLink: "https://zerobyter.github.io/paint/",
+        },
+      ],
+    },
+    {
       title: "HTML5 Canvas Projects",
       skills: ["JavaScript", "HTML5 Canvas"],
       projects: [
@@ -45,17 +62,6 @@ const siteData: SiteDataType = {
           title: "Interactive Heatmap",
           image: heatmapIndexLogo,
           mainLink: "/game/heatmap",
-        },
-      ],
-    },
-    {
-      title: "Website Projects",
-      skills: ["NodeJS", "TypeScript", "React", "SASS"],
-      projects: [
-        {
-          title: "Paint Online",
-          image: paintOnlineIndexLogo,
-          mainLink: "https://zerobyter.github.io/paint/",
         },
       ],
     },
