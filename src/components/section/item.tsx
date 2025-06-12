@@ -16,6 +16,7 @@ const Item: FC<Props> = ({ project }) => {
     >
       <img className={css.image} alt="" src={project.image} />
       <div className={css.title}>{project.title}</div>
+      <div className={css.descriptionContainer}>lol hi there</div>
     </a>
   );
 };

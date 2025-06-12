@@ -130,6 +130,8 @@ const SkillsOrbit: FC = () => {
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+      ctx.globalAlpha = 0.2;
+
       // ctx.fillStyle = "rgba(0,255,0,0.25)"
       // ctx.fillRect(0, 0, canvas.width, canvas.height)
 

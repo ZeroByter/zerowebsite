@@ -70,12 +70,12 @@ const MainLogo: FC = () => {
 
     const render = (time: number) => {
       const slowTime = time / 20;
-      // const animationsCount = Math.floor(slowTime / TEXT_WIDTH)
-      const animationIndex = 0; //animationsCount % 3
+      // const animationsCount = Math.floor(slowTime / TEXT_WIDTH);
+      const animationIndex = 0; //animationsCount % 3;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      ctx.font = `${CHAR_HEIGHT}px monospace`;
+      ctx.font = `bold ${CHAR_HEIGHT}px monospace`;
 
       for (let y = 0; y < RENDER_TEXT_LINES.length; y++) {
         const line = RENDER_TEXT_LINES[y];
@@ -90,7 +90,7 @@ const MainLogo: FC = () => {
           let shinyIndex = Math.floor(slowTime % TEXT_WIDTH) === x - y;
           let shiny1Index = Math.floor(slowTime % TEXT_WIDTH) === x - 1 - y;
 
-          let renderChar = "0";
+          let renderChar = "#";
           // if (animationIndex <= 1) {
           //   renderChar = shinyIndex || shiny1Index ? SHINY_TEXT_LETTERS[x] : '#'
           // }
@@ -102,7 +102,7 @@ const MainLogo: FC = () => {
               Math.floor((slowTime % (TEXT_WIDTH + 25)) - 20) - (x - y)
             );
 
-            renderColor = `hsl(0deg 0% ${lerp(100, 50, waveDistance / 6)}%)`;
+            renderColor = `hsl(0deg 0% ${lerp(100, 60, waveDistance / 6)}%)`;
           } else if (animationIndex === 1) {
             //0: left to right white shiny
             renderColor = shinyIndex || shiny1Index ? `white` : "gray";

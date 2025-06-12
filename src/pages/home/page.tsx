@@ -6,10 +6,12 @@ import css from "./page.module.scss";
 export default function Home() {
   return (
     <div className={css.container}>
-      <MainLogo />
+      <div className={css.logoContainer}>
+        <SkillsOrbit />
+        <MainLogo />
+      </div>
       <div className={css.quote}>{'"I love making things"'}</div>
       <div className={css.headerInfo}>
-        <SkillsOrbit />
         {/* <div className={css.links}>
           <center>Contacts</center>
           <ButtonLink href="mailto:zerobyter@zerobyter.net">Email</ButtonLink>

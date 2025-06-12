@@ -19,12 +19,18 @@
     width: 80vw;
   }
 
+  .logoContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
   .quote {
     text-align: center;
     padding-top: 10px;
     font-size: 14px;
     font-style: italic;
-    color: gray;
+    color: rgb(163, 163, 163);
   }
 
   .headerInfo {

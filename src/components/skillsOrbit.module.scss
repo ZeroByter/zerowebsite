@@ -1,4 +1,8 @@
 .container {
-  width: 400px;
+  width: 450px;
   max-width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
 }
